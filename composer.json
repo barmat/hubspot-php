@@ -1,5 +1,5 @@
 {
-    "name": "hubspot/hubspot-php",
+    "name": "barmat/hubspot-php",
     "version": "5.0.1",
     "description": "HubSpot PHP API client",
     "keywords": [ "hubspot", "api" ],
