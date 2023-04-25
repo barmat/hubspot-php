@@ -9,6 +9,11 @@
             "name": "Ryan Winchester",
             "email": "fungku@gmail.com",
             "homepage": "http://ryanwinchester.ca"
+        },
+        {
+            "name": "Matt Barry",
+            "email": "mattbarrah@gmail.com",
+            "homepage": "http://barmat.io"
         }
     ],
     "require": {
