@@ -106,7 +106,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return string HTTP protocol version
      */
-    public function getProtocolVersion()
+    public function getProtocolVersion(): string
     {
         return $this->response->getProtocolVersion();
     }
@@ -125,7 +125,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withProtocolVersion($version)
+    public function withProtocolVersion(string $version): ResponseInterface
     {
         return $this->response->withProtocolVersion($version);
     }
@@ -155,7 +155,7 @@ class Response implements ResponseInterface, ArrayAccess
      *               key MUST be a header name, and each value MUST be an array of strings
      *               for that header.
      */
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return $this->response->getHeaders();
     }
@@ -169,7 +169,7 @@ class Response implements ResponseInterface, ArrayAccess
      *              name using a case-insensitive string comparison. Returns false if
      *              no matching header name is found in the message.
      */
-    public function hasHeader($name)
+    public function hasHeader(string $name): bool
     {
         return $this->response->hasHeader($name);
     }
@@ -189,7 +189,7 @@ class Response implements ResponseInterface, ArrayAccess
      *                  header. If the header does not appear in the message, this method MUST
      *                  return an empty array.
      */
-    public function getHeader($name)
+    public function getHeader(string $name): array
     {
         return $this->response->getHeader($name);
     }
@@ -214,7 +214,7 @@ class Response implements ResponseInterface, ArrayAccess
      *                concatenated together using a comma. If the header does not appear in
      *                the message, this method MUST return an empty string.
      */
-    public function getHeaderLine($name)
+    public function getHeaderLine(string $name): string
     {
         return $this->response->getHeaderLine($name);
     }
@@ -236,7 +236,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withHeader($name, $value)
+    public function withHeader(string $name, $value): ResponseInterface
     {
         return $this->response->withHeader($name, $value);
     }
@@ -259,7 +259,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withAddedHeader($name, $value)
+    public function withAddedHeader(string $name, $value): ResponseInterface
     {
         return $this->response->withAddedHeader($name, $value);
     }
@@ -277,7 +277,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withoutHeader($name)
+    public function withoutHeader(string $name): ResponseInterface
     {
         return $this->response->withoutHeader($name);
     }
@@ -287,7 +287,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return StreamInterface returns the body as a stream
      */
-    public function getBody()
+    public function getBody(): StreamInterface
     {
         return $this->response->getBody();
     }
@@ -307,7 +307,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withBody(StreamInterface $body)
+    public function withBody(StreamInterface $body): ResponseInterface
     {
         return $this->response->withBody($body);
     }
@@ -320,7 +320,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return int status code
      */
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->response->getStatusCode();
     }
@@ -348,7 +348,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return self
      */
-    public function withStatus($code, $reasonPhrase = '')
+    public function withStatus(int $code, string $reasonPhrase = ''): ResponseInterface
     {
         return $this->response->withStatus($code, $reasonPhrase);
     }
@@ -367,7 +367,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return string reason phrase; must return an empty string if none present
      */
-    public function getReasonPhrase()
+    public function getReasonPhrase(): string
     {
         return $this->response->getReasonPhrase();
     }
